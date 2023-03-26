@@ -3,37 +3,37 @@ const fs = promises
 
 class ProductManager {
     constructor(path){
-        this.idProduct= 0;
         this.path=path;
-
-        // this.createFile() //descomentar cuando no este creado el archivo
-        
     }
 
-    // createFile = async() => {
-    //     try{
-    //         let productsJson = JSON.stringify([], null, '\t')
-    //         await fs.writeFile(this.path, productsJson, 'utf-8')
-    //     }
-    //     catch (error){
-    //         console.log(error)
-    //     }
-    // }
+    createFile = async() => {
+        try{
+            let productsJson = JSON.stringify([], null, 2)
+            await fs.writeFile(this.path, productsJson, 'utf-8')
+            return 'Archivo creado con éxito'
+        }
+        catch (error){
+            console.log(error)
+        }
+    }
 
     addProduct = async(product) =>{
         try{
-            let dataFile =  await fs.readFile( this.path, 'utf-8')
-            const productsParse = JSON.parse(dataFile);
+            const productsParse = await this.getProducts()
 
             const hasSameCode = productsParse.find(prod=> prod.code === product.code)
             if(hasSameCode){
-                console.log(`Ya existe un producto con el código ${hasSameCode.code}, por favor ingresa uno nuevo`)
+                return `Ya existe un producto con el código ${hasSameCode.code}, por favor ingresa uno nuevo`
             }else if(product.title && product.description && product.thumbnail && product.code && product.stock && product.price) {
-                productsParse.push({...product, id: productsParse.length +1})
+                const idProduct = productsParse.length === 0 ? 1 : productsParse[productsParse.length-1].id +1
+                productsParse.push({...product, id: idProduct})
+
                 let productsJson = JSON.stringify(productsParse, null, 2)
                 await fs.writeFile(this.path, productsJson, 'utf-8')
+
+                return 'Producto agregado exitosamente'
             }else{
-                console.log('Los campos title, description, stock, price, code y thumbnail son obligatorios. Detectamos que alguno de estos no has enviado. Por favor completa todos los campos')
+                return 'Los campos title, description, stock, price, code y thumbnail son obligatorios. Detectamos que alguno de estos no has enviado. Por favor completa todos los campos'
             }
         }
         catch (error) {
@@ -44,8 +44,8 @@ class ProductManager {
     getProducts = async() =>{
         try{
             let dataFile =  await fs.readFile( this.path, 'utf-8')
-            const productsParse = JSON.parse(dataFile);
-            console.log('soy products',productsParse)
+            const productsParse = await JSON.parse(dataFile);
+            return productsParse
         }
         catch (error){
             console.log(error);
@@ -54,13 +54,13 @@ class ProductManager {
 
     getProductById = async(id) =>{
         try{
-            let dataFile =  await fs.readFile( this.path, 'utf-8')
-            const productsParse = JSON.parse(dataFile);
+            const productsParse = await this.getProducts()
+
             const productSearch = productsParse.find(product => product.id === id)
             if(productSearch){
-                return console.log(`Se encontró un producto con el id ${id}: `,productSearch)
+                return productSearch
             }else{
-                return console.log("Not found")
+                return "Not found"
             }
         }
         catch (error){
@@ -70,8 +70,8 @@ class ProductManager {
 
     updateProduct = async(id, dataUpdate) =>{
         try{
-            let dataFile =  await fs.readFile( this.path, 'utf-8')
-            const productsParse = JSON.parse(dataFile);
+            const productsParse = await this.getProducts()
+
             const updateProduct = productsParse.map(product => {
                 if(product.id === id ){
                     return{
@@ -84,6 +84,8 @@ class ProductManager {
 
             let productsJson = JSON.stringify(updateProduct, null, 2)
             await fs.writeFile(this.path, productsJson, 'utf-8')
+
+            return 'Producto editado exitosamente'
     
         }
         catch (error) {
@@ -93,17 +95,16 @@ class ProductManager {
 
     deleteProduct = async(id) => {
         try{
-            let dataFile =  await fs.readFile( this.path, 'utf-8')
-            const productsParse = JSON.parse(dataFile);
+            const productsParse = await this.getProducts()
 
             const indexObject = productsParse.findIndex(product => { return product.id === id});
             
             productsParse.splice(indexObject,1)
 
-            console.log(productsParse)
-
             let productsJson = JSON.stringify(productsParse, null, 2)
             await fs.writeFile(this.path, productsJson, 'utf-8')
+
+            return 'Producto eliminado exitosamente'
 
         }
         catch (error){
@@ -113,13 +114,19 @@ class ProductManager {
 
 }
 
-const product1 = new ProductManager('./dataProducts.json')
-console.log(product1.getProducts())
-console.log(product1.getProductById(1))
-console.log(product1.updateProduct(1,{title: 'productos editado'}))
-// console.log(product1.getProducts())
-console.log(product1.deleteProduct(1)) //ver el eliminar que no esta funcionando bien. capaz tengo que usar append y no write
-// product1.addProduct({title: 'producto prueba', description: 'Este es un producto prueba', price: 250, thumbnail :'Sin imagen', code:'abc123', stock:10})
-// console.log(product1.getProducts())
-// product1.addProduct({title: 'producto prueba2', description: 'Este es un producto prueba2', price: 200, thumbnail :'Sin imagen', code:'abc1234', stock:25})
-// console.log(product1.getProducts())
+const product = new ProductManager('./dataProducts.json')
+product.createFile().then((data) => console.log(data)) //comentar cuando se haya creado el archivo.
+// product.getProducts().then((data)=> console.log(data))
+// product.addProduct({title: 'producto prueba', description: 'Este es un producto prueba', price: 250, thumbnail :'Sin imagen', code:'abc123', stock:10}).then((data)=>{
+//     console.log(data)
+//     product.getProducts().then((data)=> console.log(data))
+// })
+// product.getProductById(1).then((data)=> console.log(data))
+// product.updateProduct(1,{title: 'producto editado', price: 300}).then((data)=>{
+//     console.log(data)
+//     product.getProducts().then((data)=> console.log(data))
+// })
+// product.deleteProduct(1).then((data)=> {
+//     console.log(data)
+//     product.getProducts().then((data)=> console.log(data))
+// })

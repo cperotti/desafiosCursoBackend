@@ -1,0 +1,92 @@
+[
+  {
+    "title": "Papas fritas",
+    "description": "Papas fritas tradicionales",
+    "price": 618,
+    "thumbnail": "Sin imagen",
+    "code": "001",
+    "stock": 20,
+    "id": 1
+  },
+  {
+    "title": "Fideos",
+    "description": "Fideos tirabuzón",
+    "price": 236,
+    "thumbnail": "Sin imagen",
+    "code": "002",
+    "stock": 100,
+    "id": 2
+  },
+  {
+    "title": "Atún",
+    "description": "Atún desmenuzado",
+    "price": 249,
+    "thumbnail": "Sin imagen",
+    "code": "003",
+    "stock": 35,
+    "id": 3
+  },
+  {
+    "title": "Mermelada",
+    "description": "Mermelada de durazno",
+    "price": 456,
+    "thumbnail": "Sin imagen",
+    "code": "004",
+    "stock": 10,
+    "id": 4
+  },
+  {
+    "title": "Leche",
+    "description": "Leche en polvo entera",
+    "price": 1830,
+    "thumbnail": "Sin imagen",
+    "code": "005",
+    "stock": 23,
+    "id": 5
+  },
+  {
+    "title": "Agua",
+    "description": "Agua mineral",
+    "price": 187,
+    "thumbnail": "Sin imagen",
+    "code": "006",
+    "stock": 56,
+    "id": 6
+  },
+  {
+    "title": "Aceite",
+    "description": "Aceite de oliva",
+    "price": 2161,
+    "thumbnail": "Sin imagen",
+    "code": "007",
+    "stock": 15,
+    "id": 7
+  },
+  {
+    "title": "Yerba",
+    "description": "Yerba Playadito 500g",
+    "price": 620,
+    "thumbnail": "Sin imagen",
+    "code": "008",
+    "stock": 5,
+    "id": 8
+  },
+  {
+    "title": "Té",
+    "description": "Té Green Hills",
+    "price": 100,
+    "thumbnail": "Sin imagen",
+    "code": "009",
+    "stock": 17,
+    "id": 9
+  },
+  {
+    "title": "Galletitas",
+    "description": "Galletitas 9 de Oro",
+    "price": 277,
+    "thumbnail": "Sin imagen",
+    "code": "010",
+    "stock": 87,
+    "id": 10
+  }
+]

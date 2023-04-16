@@ -3,90 +3,121 @@
     "title": "Papas fritas",
     "description": "Papas fritas tradicionales",
     "price": 618,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "001",
     "stock": 20,
-    "id": 1
+    "id": 1,
+    "category": "snack",
+    "status": true
   },
   {
     "title": "Fideos",
     "description": "Fideos tirabuzón",
     "price": 236,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "002",
     "stock": 100,
-    "id": 2
+    "id": 2,
+    "category": "almacen",
+    "status": true
   },
   {
     "title": "Atún",
     "description": "Atún desmenuzado",
     "price": 249,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "003",
     "stock": 35,
-    "id": 3
+    "id": 3,
+    "category": "almacen",
+    "status": true
   },
   {
     "title": "Mermelada",
     "description": "Mermelada de durazno",
     "price": 456,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "004",
     "stock": 10,
-    "id": 4
+    "id": 4,
+    "category": "almacen",
+    "status": true
   },
   {
     "title": "Leche",
     "description": "Leche en polvo entera",
     "price": 1830,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "005",
     "stock": 23,
-    "id": 5
+    "id": 5,
+    "category": "lacteos",
+    "status": true
   },
   {
     "title": "Agua",
     "description": "Agua mineral",
     "price": 187,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "006",
     "stock": 56,
-    "id": 6
+    "id": 6,
+    "category": "bebidas",
+    "status": true
   },
   {
     "title": "Aceite",
     "description": "Aceite de oliva",
     "price": 2161,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "007",
     "stock": 15,
-    "id": 7
+    "id": 7,
+    "category": "almacen",
+    "status": true
   },
   {
     "title": "Yerba",
     "description": "Yerba Playadito 500g",
     "price": 620,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "008",
     "stock": 5,
-    "id": 8
+    "id": 8,
+    "category": "almacen",
+    "status": true
   },
   {
     "title": "Té",
     "description": "Té Green Hills",
     "price": 100,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "009",
     "stock": 17,
-    "id": 9
+    "id": 9,
+    "category": "snack",
+    "status": true
   },
   {
     "title": "Galletitas",
     "description": "Galletitas 9 de Oro",
     "price": 277,
-    "thumbnail": "Sin imagen",
+    "thumbnail": [],
     "code": "010",
     "stock": 87,
-    "id": 10
+    "id": 10,
+    "category": "almacen",
+    "status": true
+  },
+  {
+    "title": "Pechuga de pollo",
+    "description": "Pechuga de pollo sin piel",
+    "price": 1889,
+    "code": "011",
+    "thumbnail": [],
+    "stock": 20,
+    "category": "carnes",
+    "id": 11,
+    "status": true
   }
 ]

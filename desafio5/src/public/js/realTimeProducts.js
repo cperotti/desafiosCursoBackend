@@ -19,7 +19,7 @@ const deletAlert = () => {
         let divPadre = document.getElementById('alerts')
         let alert = document.getElementById('prueba')
         divPadre.removeChild(alert)
-    },3000)
+    },5000)
 }
 
 socket.on('products', data => {

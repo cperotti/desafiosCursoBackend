@@ -60,7 +60,7 @@ formAdd.addEventListener('submit', evento=>{
 formDelete.addEventListener('submit', evento => {
     evento.preventDefault()
 
-    socket.emit('deleteProduct', id.value)
+    socket.emit('deleteProduct', parseInt(id.value))
 
     id.value = null
     deletAlert()

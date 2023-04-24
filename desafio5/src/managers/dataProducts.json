@@ -88,17 +88,6 @@
     "status": true
   },
   {
-    "title": "Té",
-    "description": "Té Green Hills",
-    "price": 100,
-    "thumbnail": [],
-    "code": "009",
-    "stock": 17,
-    "id": 9,
-    "category": "snack",
-    "status": true
-  },
-  {
     "title": "Galletitas",
     "description": "Galletitas 9 de Oro",
     "price": 277,
@@ -119,5 +108,16 @@
     "category": "carnes",
     "id": 11,
     "status": true
+  },
+  {
+    "title": "Doritos",
+    "description": "Doritos de queso 140g",
+    "price": 841,
+    "code": "013",
+    "stock": 100,
+    "category": "Elige una categoría",
+    "thumbnail": "sin imagen",
+    "status": true,
+    "id": 13
   }
 ]
